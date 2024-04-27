@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel and Tourism</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .contact, .footer, .user-modal, .user-dashboard {
+            margin: 20px;
+        }
+        .user-modal, .user-dashboard {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 400px;
+        }
+        .close-btn {
+            cursor: pointer;
+            float: right;
+        }
+        .dashboard-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="submit_form.php" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <p>Email: info@travelandtourism.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <p>Address: 123 Travel Street, Anytown, Anywhere</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.twitter.com/yourhandle" target="_blank">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form action="subscribe.php" method="post">
+                    <label for="newsletter-email">Your Email:</label>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="legal">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Travel and Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- User Account System -->
+    <div id="user-modal" class="user-modal">
+        <span class="close-btn">&times;</span>
+        <div id="login-form">
+            <h2>Login</h2>
+            <form>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" placeholder="Username">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="register-form" style="display: none;">
+            <h2>Register</h2>
+            <form>
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" placeholder="Username">
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" placeholder="Password">
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" placeholder="Email">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <button id="show-register-btn">Don't have an account? Register</button>
+    </div>
+
+    <!-- User Dashboard -->
+    <div id="user-dashboard" class="user-dashboard">
+        <h2>Welcome, User!</h2>
+        <div class="dashboard-section">
+            <h3>Saved Preferences</h3>
+        </div>
+        <div class="dashboard-section">
+            <h3>Bookings</h3>
+        </div>
+        <div class="dashboard-section">
+            <h3>Travel Plans</h3>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for User Account System
+        document.getElementById('show-register-btn').addEventListener('click', function() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        });
+
+        // Example function to simulate user login
+        function loginUser() {
+            // Simulate login
+            document.getElementById('user-modal').style.display = 'none';
+            document.getElementById('user-dashboard').style.display = 'block';
+        }
+
+        // Example function to simulate user registration
+        function registerUser() {
+            // Simulate registration
+            document.getElementById('user-modal').style.display = 'none';
+            document.getElementById('user-dashboard').style.display = 'block';
+        }
+
+        // Close user modal
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('user-modal').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
